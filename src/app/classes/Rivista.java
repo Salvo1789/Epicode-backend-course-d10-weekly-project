@@ -17,12 +17,12 @@ public class Rivista extends Prodotto {
 	}
 
 	public static String toStringFile(Rivista prod) {
-		return Rivista.class.getSimpleName() + "#" + prod.ISBN + "#" + prod.titolo + "#" + prod.annoPubblicazione + "#"
-				+ prod.numPagine + "#" + prod.periodicita;
+		return Rivista.class.getSimpleName() + "@" + prod.ISBN + "@" + prod.titolo + "@" + prod.annoPubblicazione + "@"
+				+ prod.numPagine + "@" + prod.periodicita;
 	}
 
 	public static Prodotto fromStringFile(String subString) {
-		String[] split = subString.split("#");
+		String[] split = subString.split("@");
 		Periodicita periodicita = Periodicita.valueOf(split[5]);
 
 		return new Rivista(split[1], split[2], Integer.valueOf(split[3]), Integer.valueOf(split[4]), periodicita);

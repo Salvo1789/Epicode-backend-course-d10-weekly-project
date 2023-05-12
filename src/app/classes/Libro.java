@@ -27,14 +27,14 @@ public class Libro extends Prodotto {
 	}
 
 	public static String toStringFile(Libro prod) {
-		return Libro.class.getSimpleName() + "#" + prod.ISBN + "#" + prod.titolo + "#" + prod.annoPubblicazione + "#"
-				+ prod.numPagine + "#" + prod.autore + "#" + prod.genere;
+		return Libro.class.getSimpleName() + "@" + prod.ISBN + "@" + prod.titolo + "@" + prod.annoPubblicazione + "@"
+				+ prod.numPagine + "@" + prod.autore + "@" + prod.genere;
 	}
 
 	public static Prodotto fromStringFile(String subString) {
-		String[] split = subString.split("#");
+		String[] split = subString.split("@");
 
-		return new Libro(split[0], split[1], Integer.valueOf(split[2]), Integer.valueOf(split[3]), split[4], split[5]);
+		return new Libro(split[1], split[2], Integer.valueOf(split[3]), Integer.valueOf(split[4]), split[5], split[6]);
 	}
 
 }

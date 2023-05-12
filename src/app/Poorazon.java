@@ -33,10 +33,12 @@ public class Poorazon {
 
 			catalogo.caricaCatalogo();
 
-			List<Libro> ricercaPerAutore = catalogo.ricercaAutore("Lev Tolstoj");
-
+			List<Libro> ricercaPerAutore = catalogo.ricercaAutore("Mauro De Mauri");
 			ricercaPerAutore.forEach(prod -> System.out.println("Titolo: " + prod.getTitolo()));
 
+			List<Libro> ricercaPerGenere = catalogo.ricercaGenere("Romanzo");
+			ricercaPerGenere.forEach(prod -> System.out
+					.println("Libri disponibili di genere " + prod.getGenere() + ": " + prod.getTitolo()));
 		} catch (IOException e) {
 			logger.error("Errore durante la lettura/scrittura", e);
 		}
